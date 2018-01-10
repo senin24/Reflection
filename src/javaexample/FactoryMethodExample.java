@@ -9,11 +9,16 @@ public class FactoryMethodExample {
     	String classString = "javaexample.ConcreteProductA";
     	Class<?> c = Class.forName(classString);
     	Constructor<?> ctr = c.getConstructor(String.class);
-    	Object obj = ctr.newInstance(new Object[] { "arg1 for class ConcreteProductA" });
-    	Product product = (Product) obj;
+    	Object obj = ctr.newInstance(new Object[] { "arg1 for class ConcreteProductAAAAAA" });
+    	IProduct product = (Product) obj;
         System.out.printf("Created {%s}\n", product.getClass());
         ConcreteProductA concreteProductA = (ConcreteProductA) product;
         concreteProductA.methodConcreteProductA();
+        System.out.println("product.getFieldMainClass() - " + product.getFieldMainClass());
+        System.out.println("product.methodMainClass() - ");
+        product.methodMainClass();
+        System.out.println();
+        System.out.println("----------------");
     	
         classString = "javaexample.ConcreteProductB";
     	c = Class.forName(classString);
